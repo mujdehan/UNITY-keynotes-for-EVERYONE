@@ -26,7 +26,12 @@ transform.Translate(Vector3.forward * Time.deltaTime*speed*verticalInput);
 
 //rotating plane with up/down arrows
 transform.Rotate(Vector3.right * rotationSpeed * verticalInput*Time.deltaTime);
-
+/* if the plane rotating over the x axis yo will write Vector3.right*speed*Time.deltaTime....
+    "  "   "         "   over the y axis you will write Vector3.up*..
+    .....................over the z axis .............. Vector3.forward
+*/
 
 //rotating car etc. with rihgt / left arrows
 transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
+// after the comma we show the Default Value
+
