@@ -1,0 +1,26 @@
+Following Player with camera
+we wrote script for Camera just said "Follow.cs"
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FollowPlayer : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+
+    public GameObject player; //this is for  choosing the object which is used to follow in Inspector. 
+    private Vector3 offset = new Vector3(0, 5, -7); //you will follow the object from 5m up and 7m back 
+
+    void LateUpdate()
+    {
+        transform.position = player.transform.position + offset;
+        //The camera's position is player position+ 5m up and 7m back
+    }
+}
