@@ -1,0 +1,23 @@
+/* Vector3  
+***Static Properties
+back	        Shorthand for writing Vector3(0, 0, -1).
+down	        Shorthand for writing Vector3(0, -1, 0).
+forward	      Shorthand for writing Vector3(0, 0, 1).
+left	        Shorthand for writing Vector3(-1, 0, 0).
+negativeInfinity	Shorthand for writing Vector3(float.NegativeInfinity, float.NegativeInfinity, float.NegativeInfinity).
+one	Shorthand for writing Vector3(1, 1, 1).
+
+positiveInfinity	Shorthand for writing Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity).
+right	Shorthand for writing Vector3(1, 0, 0).
+
+up	Shorthand for writing Vector3(0, 1, 0).
+zero	Shorthand for writing Vector3(0, 0, 0).
+*/
+horizontalInput = Input.GetAxis("Horizontal");
+verticalInput = Input.GetAxis("Vertical");
+
+//fix speed moving
+transform.Translate(Vector3.forward * Time.deltaTime * speed );
+
+//rotating
+transform.Rotate(Vector3.right * rotationSpeed * verticalInput*Time.deltaTime);
