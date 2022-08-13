@@ -13,11 +13,20 @@ right	Shorthand for writing Vector3(1, 0, 0).
 up	Shorthand for writing Vector3(0, 1, 0).
 zero	Shorthand for writing Vector3(0, 0, 0).
 */
+
+
 horizontalInput = Input.GetAxis("Horizontal");
 verticalInput = Input.GetAxis("Vertical");
 
 //fix speed moving
 transform.Translate(Vector3.forward * Time.deltaTime * speed );
 
-//rotating
+//moving with up/down arrows
+transform.Translate(Vector3.forward * Time.deltaTime*speed*verticalInput);
+
+//rotating plane with up/down arrows
 transform.Rotate(Vector3.right * rotationSpeed * verticalInput*Time.deltaTime);
+
+
+//rotating car etc. with rihgt / left arrows
+transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
