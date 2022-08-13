@@ -1,0 +1,49 @@
+Camera. Inspector   View Port Rect W=.5 
+Game section shows 2 camera view. We have 2 cameras. First one shows in front of the plane
+The other one shows Backward of the plane.
+We can show all of the camera view
+
+-------------------------
+For exam. we have 2 cameras and we press the "1" key we can show first one, when we press "2" we can show the other one
+ıNPUT mANAGER WE delete 18 axis, write 22 axis
+And then Name the "Cancel" to "1KEY"
+Positive:1
+Add  delete the "joystick ...
+
+And then Name the "Cancel" to "2KEY"
+Positive:2
+Add  delete the "joystick ...
+
+
+  HERE İS THE SCRİPT
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SwitchCamera : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    public GameObject cam1;
+    public GameObject cam2;
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.GetButtonDown("1kEY"))
+        {
+            cam1.SetActive(true);
+            cam2.SetActive(false);
+        }
+        if(Input.GetButtonDown("2kEY"))
+        {
+            cam1.SetActive(false);
+            cam2.SetActive(true);
+        }
+
+    }
+}
